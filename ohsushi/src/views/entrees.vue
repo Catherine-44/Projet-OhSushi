@@ -17,7 +17,7 @@
     const axios = require('axios');
 
     const instance = axios.create({
-    baseURL : 'http://localhost:3000/'
+    baseURL : 'http://137.74.198.192:3000/'
     })
 
     export default{

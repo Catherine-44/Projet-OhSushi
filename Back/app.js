@@ -1,14 +1,11 @@
-const Menu = require("./Controleur/Menu")
-const menuRoutes = require("./Route/Menu")
+const Commande = require("./Controleur/Commande")
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path')
 const cors = require('cors')
 const CommandeRoutes = require("./Route/Commande")
 
-var mysql = require('mysql');
-
-
+Commande.demarremysql
 const app = express()
 
 //Header CORS MiddleWare
@@ -21,7 +18,7 @@ app.use((req, res, next)=>{
 })
 app.use(cors())
 app.use(bodyParser.json());
-app.use("/menu",menuRoutes)
 app.use("/Commande",CommandeRoutes)
+app.use('/audio', express.static(path.join(__dirname, 'audio')));
 module.exports = app; 
 
